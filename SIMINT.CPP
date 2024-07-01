@@ -1,0 +1,16 @@
+#include<iostream.h>
+#include<conio.h>
+//program for calculating simple intrest:
+void main(){
+float p, r, t, si;
+clrscr();
+cout<<"please enter the principle amount:";
+cin>>p;
+cout<<"please enter the rate of intrest:";
+cin>>r;
+cout<<"please enter the time(in years):";
+cin>>t;
+si=(p*r*t)/100;
+cout<<"simple intrest is:"<<si;
+getch();
+}

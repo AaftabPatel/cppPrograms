@@ -1,0 +1,38 @@
+#include<iostream.h>
+#include<conio.h>
+class complex
+{
+int real, imag;
+public:
+	void inputdata(){
+		int i,r;
+		cout<<"please enter the real part of the complex number:";
+		cin<<r;
+		cout<<"please enter the imaginary part of the complex number:";
+		cin<<i;
+		real=r;
+		imag=i;
+		}
+	void displaydata(){
+		cout<<real <<"+i"<<imag;
+		}
+	void sum(complex c1, complex c2){
+		real=c1.real+c2.real;
+		imag=c1.imag+c2.imag;
+		}
+};
+void main()
+{
+clrscr();
+complex c1,c2,c3;
+c1.inputdata();
+c2.inputdata();
+c3.sum(c1,c2);
+cout<<"first complex number is:";
+c1.displaydata();
+cout<<"\nsecond complex number is:";
+c2.displaydata();
+cout<<"\nsum is:";
+c3.displaydata();
+getch();
+}

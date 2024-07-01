@@ -1,0 +1,50 @@
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+char op;
+int n1,n2,rem;
+clrscr();
+cout<<"\nMENU";
+cout<<"\n&=bitwise and";
+cout<<"\n|=bitwise or";
+cout<<"\n^=bitwise xor";
+cout<<"\n~=bitwise copliment";
+cout<<"\n<<=bitwise left shift";
+cout<<"\n>>=bitwise right shift";
+
+cout<<"please enter the bitwise operator:";
+cin>>op;
+
+cout<<"please enter the first number:";
+cin>>n1;
+
+cout<<"please enter the second number:";
+cin>>n2;
+
+switch(op)
+	{
+	case('&'):rem=n1&n2;
+		  cout<<"result is:"<< rem;
+		  break;
+	case('|'):rem=n1|n2;
+		  cout<<"result is:"<< rem;
+		  break;
+	case('^'):rem=n1^n2;
+		  cout<<"result is:"<< rem;
+		  break;
+	case('<<'):rem=n1<<n2;
+		  cout<<"result is:"<< rem;
+		  break;
+	case('~'):rem=~n1;
+		  cout<<"result is:"<< rem;
+		  break;
+	case('>>'):rem=n1>>n2;
+		  cout<<"result is:"<< rem;
+		  break;
+	default:cout<<"please enter the correct operator!!!";
+	}
+
+
+getch();
+}

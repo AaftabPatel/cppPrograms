@@ -1,0 +1,63 @@
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+char ch;
+int n1,n2,rem;
+clrscr();
+cout<<"\nMENU";
+cout<<"\n1=is equal to";
+cout<<"\n2=not equal to";
+cout<<"\n3=greater than";
+cout<<"\n4=greater than equal to";
+cout<<"\n5=less than";
+cout<<"\n6=less than equal to";
+
+cout<<"\nplease enter your choice:";
+cin>>ch;
+
+cout<<"please enter the first number:";
+cin>>n1;
+
+cout<<"please enter the second number:";
+cin>>n2;
+
+switch(ch)
+	{
+	case 1:if(n1==n2)
+		  cout<<n1<<" is equal to "<<n2;
+	       else
+		  cout<<n1<<" is not equal to "<<n2;
+	       break;
+	case 2:if(n1!=n2)
+		  cout<<n1<<" is equal to "<<n2;
+	       else
+		  cout<<n1<<" is not equal to "<<n2;
+	       break;
+	case 3: if(n1>n2)
+		  cout<<n1<<" is greater than "<<n2;
+	       else
+		  cout<<n1<<" is not greater than "<<n2;
+	       break;
+	case 4:if(n1>=n2)
+		  cout<<n1<<" is greater than equal to "<<n2;
+	       else
+		  cout<<n1<<" is not greater than equal to "<<n2;
+	       break;
+	case 5:if(n1<n2)
+		  cout<<n1<<" is less than "<<n2;
+	       else
+		  cout<<n1<<" is not less than "<<n2;
+	       break;
+	case 6:if(n1<=n2)
+		  cout<<n1<<" is less than equal to "<<n2;
+	       else
+		  cout<<n1<<" is not less than equal to "<<n2;
+	       break;
+
+	default:cout<<"please enter the correct number!!!";
+	}
+
+
+getch();
+}

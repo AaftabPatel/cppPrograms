@@ -1,0 +1,151 @@
+#include<iostream.h>
+#include<conio.h>
+#include<string.h>
+
+class student           //class
+{
+public:         		//encapsulation
+	 int admno;
+	 string sname;			     //polymorphism
+	long int fee;
+	float m1,m2,m3,m4,m5,v1,v2,p3,p4,p5;
+	void  take_data(){                    //function definition inside class
+		cout<<"Enter admission no.:";
+		cin>>admno;
+		cout<<"Enter student name:";
+		gets(sname);
+		cout<<"Enter marks of all five subjects(out of 80):";
+		cin>>m1>>m2>>m3>>m4>>m5;
+		cout<<"Enter marks of viva of two subjects(out of 20):";
+		cin>>v1>>v2;
+		cout<<"Enter marks of projetct of net three subjects(out of 20):";
+		cin>>p3,p4,p5;
+		cout<<"please enter the total fees paid:";
+		cin>>fee;
+		}
+
+	void  show_data(){
+	     cout<<"..Student details.."<<"\n";
+	     cout<<"Admission number="<<admno<<"\n";
+	     cout<<"Student name:"<<sname<<"\n";
+	     cout<<"subject 1 marks(out of 80):"<<m1<<"\n";
+	     cout<<"subject 2 marks(out of 80):"<<m2<<"\n";
+	     cout<<"subject 3 marks(out of 80):"<<m3<<"\n";
+	     cout<<"subject 4 marks(out of 80):"<<m4<<"\n";
+	     cout<<"subject 5 marks(out of 80):"<<m5<<"\n";
+	     cout<<"subject 1 viva marks(out of 20):"<<v1<<"\n";
+	     cout<<"subject 2 viva marks(out of 20):"<<v2<<"\n";
+	     cout<<"subject 3 project marks(out of 20):"<<p3<<"\n";
+	     cout<<"subject 4 project marks(out of 20):"<<p3<<"\n";
+	     cout<<"subject 5 project marks(out of 20):"<<p3<<"\n";
+	     }
+};
+
+class exam: virtual public student{    //virtual function
+     float total;
+public:
+	void inline total(float n1,float n2,float n3,float n4,float n5){   //inline function
+	       float tot;
+	       tot=n1+n2+n3+n4+n5;
+	       cout<<"total is:"<<tot<<endl;
+	       }
+	float total(){ 			  //function overloading
+	       float tot;
+	       tot=m1+m2+m3+m4+m5+v1+v2+p3+p4+p5;
+	       return tot;
+	       }
+
+};
+class fees: virtual public student{  //virtual function
+public:
+	fees(){          	//constructor
+		if(fee<50000){
+			long int f;
+			f=50000-fee;
+			cout<<"fee due="<<f;
+			}
+	}
+};
+class result:public fees, public exam{  //hybrid inheritance
+public:
+	result(){};
+	float  total(){                 //function overriding
+	       float tot;
+	       tot=m1+m2+m3+m4+m5+v1+v2+p3+p4+p5;
+	       return tot;
+	       }
+	char grade(int s){
+	char g;
+	if (s>=90)
+		g='A';
+	else if (s>=80 && s<90)
+		g='B';
+	else if (s>=70 && s<80)
+		g='C';
+	else if (s>=60 && s<70)
+		g='D';
+	else if (s>=33 && s<60)
+		g='E';
+	else
+		g='F';
+	return g;
+	}
+	void  percentage(){
+		float per,t;
+		t=float total();
+		per=t/500;
+		cout<<"overall percentage is:"<<per<<endl;
+	}
+
+	friend ostream &operator <<(ostream &out, result &s);  //opeator overloading
+};
+
+ostream &operator <<(ostream &out, result &s){            //friend function
+	     out<<"..Student result.."<<"\n";
+	     out<<"Admission number="<<s.admno<<"\n";
+	     out<<"Student name:"<<s.sname<<"\n";
+	     out<<"Subject1 marks:\ntheory:"<<s.m1<<" viva marks:"<<s.v1<<" grade:"<<s.grade(s.m1)<<"\n";
+	     out<<"Subject2 marks:\ntheory:"<<s.m2<<" viva marks:"<<s.v2<<" grade:"<<s.grade(s.m2)<<"\n";
+	     out<<"Subject3 marks:\ntheory:"<<s.m3<<" project:"<<s.p3<<" grade:"<<s.grade(s.m3)<<"\n";
+	     out<<"Subject4 marks:\ntheory:"<<s.m4<<" project:"<<s.p4<<" grade:"<<s.grade(s.m4)<<"\n";
+	     out<<"Subject5 marks:\ntheory:"<<s.m5<<" project:"<<s.p5<<" grade:"<<s.grade(s.m5)<<"\n";
+	     void percentage();
+	     return out;
+}
+
+
+void  main()
+{
+int ch;
+clrscr();
+do             //do -while loop
+{
+cout<<"\nMENU";
+cout<<"\n1=Add student data";
+cout<<"\n2=Display student data";
+cout<<"\n3=See pending fees";
+cout<<"\n4=See result";
+cout<<"\n5=exit";
+cout<<"\nplease enter your choice:";
+cin>>ch;
+student s1;
+result r1;
+switch(ch)   			//switch case
+	{
+	case 1:void take_data();          //entering data
+	       break;
+	case 2:void show_data();         //retreving data
+	       break;
+	case 3:s1.fees();        //cheacking fees
+	       break;
+	case 4:cout<<r1;     //seeing result
+		break;
+	case 5:cout<<"thank you:";   //exiting loop
+		break;
+	default:cout<<"please enter correct choice!!!";
+	}
+}
+while(ch!=6);
+getch();
+}
+

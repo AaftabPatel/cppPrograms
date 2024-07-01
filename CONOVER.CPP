@@ -1,0 +1,30 @@
+#include<iostream.h>
+#include<conio.h>
+class volume{
+double l,b,h,s,v;
+public:
+volume(){} ;
+volume(double len, double br, double ht){
+l=len;
+b=br;
+h=ht;
+v=l*b*h;
+cout<<"volume of cuboid is:"<<v;
+}
+volume(double a){
+s=a;
+v=a*a*a;
+cout<<"\nvolume of cuboid is:"<<v;
+}
+};
+void main(){
+double l,b,h,s;
+clrscr();
+cout<<"please enter the length, breadth, height of cuboid:";
+cin>>l>>b>>h;
+cout<<"please enter the side of a cube:";
+cin>>s;
+volume(l,b,h);
+volume(s);
+getch();
+}

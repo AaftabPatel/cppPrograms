@@ -1,0 +1,74 @@
+#include<iostream.h>
+#include<conio.h>
+class complex
+{
+int real, imag;
+public:
+void inputdata(){
+	int i,r;
+	cout<<"please enter the real part of the complex number:";
+	cin>>r;
+	cout<<"please enter the imaginary part of the complex number:";
+	cin>>i;
+	real=r;
+	imag=i;
+	}
+void displaydata(){
+	cout<<real <<"+i"<<imag;
+	}
+complex operator+(complex c)
+	{
+	complex temp;
+	temp.real=real+c.real;
+	temp.imag=imag+c.imag;
+	return temp;
+	}
+complex operator-(complex c)
+	{
+	complex temp;
+	temp.real=real-c.real;
+	temp.imag=imag-c.imag;
+	return temp;
+	}
+complex operator*(complex c)
+	{
+	complex temp;
+	temp.real=real*c.real;
+	temp.imag=imag*c.imag;
+	return temp;
+	}
+complex operator*(int i)
+	{
+	complex temp;
+	temp.real=real*i;
+	temp.imag=imag*i;
+	return temp;
+	}
+};
+void main()
+{
+clrscr();
+complex c1,c2,c3,c4,c5,c6;
+c1.inputdata();
+c2.inputdata();
+cout<<"first complex number is:";
+c1.displaydata();
+cout<<"\nsecond complex number is:";
+c2.displaydata();
+cout<<"\nsum is:";
+c3=c1+c2;
+c3.displaydata();
+cout<<"\nsubtration is:";
+c4=c1-c2;
+c4.displaydata();
+cout<<"\nmultiplication is:";
+c5=c1*c2;
+c5.displaydata();
+int n;
+cout<<"\nplease enter the integer you want to multiply with:";
+cin>>n;
+cout<<"\nmultiplication with integer is:";
+c6=c1*n;
+c6.displaydata();
+getch();
+}

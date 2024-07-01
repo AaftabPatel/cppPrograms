@@ -1,0 +1,46 @@
+#include<iostream.h>
+#include<conio.h>
+void main()
+{
+char op;
+int n1,n2,rem;
+clrscr();
+cout<<"\nMENU";
+cout<<"\n+=addition operator";
+cout<<"\n-=subtraction operator";
+cout<<"\n/=division operator";
+cout<<"\n*=multiplication operator";
+cout<<"\n%=modulous operator";
+
+cout<<"please enter the arithmetic operator:";
+cin>>op;
+
+cout<<"please enter the first number:";
+cin>>n1;
+
+cout<<"please enter the second number:";
+cin>>n2;
+
+switch(op)
+	{
+	case('+'):rem=n1+n2;
+		  cout<<"sum is:"<< rem;
+		  break;
+	case('-'):rem=n1-n2;
+		  cout<<"diffrence is:"<< rem;
+		  break;
+	case('*'):rem=n1*n2;
+		  cout<<"multiplication is:"<< rem;
+		  break;
+	case('/'):rem=n1/n2;
+		  cout<<"division is:"<< rem;
+		  break;
+	case('%'):rem=n1%n2;
+		  cout<<"modulo is:"<< rem;
+		  break;
+	default:cout<<"please enter the correct operator!!!";
+	}
+
+
+getch();
+}

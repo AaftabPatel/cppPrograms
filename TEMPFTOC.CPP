@@ -1,0 +1,12 @@
+#include<iostream.h>
+#include<conio.h>
+//program for converting temperature(f to c):
+void main(){
+float c, f;
+clrscr();
+cout<<"please enter the temperature in farenheit:";
+cin>>f;
+c=((f-32)*5)/9;;
+cout<<"temperature in celsius is:"<<c;
+getch();
+}

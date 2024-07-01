@@ -1,0 +1,70 @@
+#include <iostream.h>
+#include <conio.h>
+
+template <class T>
+T findMin(T arr[],int n)
+{
+    int i;
+    T min;
+    min=arr[0];
+    for(i=0;i<n;i++)
+    {
+	 if(min > arr[i])
+	min=arr[i];
+    }
+    return(min);
+}
+
+
+void main()
+{
+    clrscr();
+    int iarr[5];
+    char carr[5];
+    double darr[5];
+    cout<<"..choices..";
+    cout<<"\n1=integer array";
+    cout<<"\n2=character array";
+    cout<<"\n3=double array";
+    int ch;
+    cout<<"\nplease enter your choice:";
+    cin>>ch;
+    switch(ch){
+    case 1:int n1;
+	cout<<"please enter no. of elements:";
+	cin>>n1;
+    cout << "Integer Values \n";
+    for(int i=0; i < n1; i++)
+    {
+	cout << "Enter integer value "  << i+1 << " : ";
+	cin >> iarr[i];
+    }
+    cout<<"Integer Minimum is : "<<findMin(iarr,n1)<<"\n";
+    break;
+    case 2:int n2;
+	cout<<"please enter no. of elements:";
+	cin>>n2;
+    cout << "Character values \n";
+    for(int j=0; j < n2; j++)
+    {
+	cout << "Enter character value " << j+1 << " : ";
+	cin >> carr[j];
+    }
+
+    cout<<"Character Minimum is : "<<findMin(carr,n2)<<"\n";
+    break;
+    case 3:int n3;
+	cout<<"please enter no. of elements:";
+	cin>>n3;
+	cout << "Decimal values \n";
+    for(int k=0; k < n3; k++)
+    {
+	cout << "Enter decimal value " << k+1 << " : ";
+	cin >> darr[k];
+    }
+    cout<<"Double Minimum is : "<<findMin(darr,n3)<<"\n";
+    break;
+    default:cout<<"please enter corrct choice!!";
+    }
+    getch();
+}

@@ -1,0 +1,13 @@
+#include<iostream.h>
+#include<conio.h>
+void main(){
+int n1, n2, sum;
+clrscr();
+cout<<"please enter the first number:";
+cin>>n1;
+cout<<"please enter the second number:";
+cin>>n2;
+sum=n1+n2;
+cout<<"sum is:"<<sum;
+getch();
+}

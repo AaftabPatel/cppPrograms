@@ -1,0 +1,49 @@
+#include<iostream.h>
+#include<conio.h>
+class distance{
+int m,cm;
+public:
+distance operator+(distance d){
+	distance temp;
+	temp.cm =cm + d.cm;
+	temp.m = m+ d.m + temp.cm/100;
+	temp.cm = temp.cm%100;
+	return temp;
+	}
+int operator==(const distance d){
+if(m==d.m && cm==d.cm)
+	return 1;
+else
+	return 0;
+}
+friend istream &operator>>(istream &din, distance &d);
+friend ostream &operator<<(ostream &dout, distance &d);
+};
+istream& operator>>(istream &din, distance &d){
+	cout<<"\nEnter the value in meter:";
+	din>>d.m;
+	cout<<"\nEnter the value in centimeter:";
+	din>>d.cm;
+	return din;
+}
+ostream& operator<<(ostream &dout, distance &d){
+	dout<<d.m<<"m ";
+	dout<<d.cm<<"cm ";
+	return dout;
+}
+void main(){
+distance d1,d2,d3;
+clrscr();
+cout<<"Enter distanc:";
+cin>>d1;
+cout<<"Enter distance:";
+cin>>d2;
+d3=d1+d2;
+cout<<"sum of the dstances is:";
+cout<<d3;
+if(d1==d2)
+	cout<<"\nBoth are equal.";
+else
+	cout<<"\nBoth are not equal!!!";
+getch();
+}
